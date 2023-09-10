@@ -9,6 +9,6 @@ class RecruitmentController extends Controller
 {
     public function index(Recruitment $recruitment)
     {
-        return $recruitment->get();
+        return view('recruitments/index')->with(['recruitments' => $recruitment->get()]); 
     }
 }

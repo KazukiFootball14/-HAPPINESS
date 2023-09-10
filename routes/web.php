@@ -13,4 +13,5 @@ use App\Http\Controllers\RecruitmentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/recruitments', [RecruitmentController::class, 'index']);
+
+Route::get('/', [RecruitmentController::class, 'index']);
