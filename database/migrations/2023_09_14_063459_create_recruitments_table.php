@@ -13,15 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('recruitments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("user_id")->constrained();
-            $table->foreignId("image_id")->constrained();
+            $table->foreignId("user_id")->constrained("users");
+            $table->foreignId("image_id")->constrained("images");
             $table->string("dog_name");
-            $table->foreignId("kind_id")->constrained();
+            $table->foreignId("kind_id")->constrained("kinds");
             $table->string("dog_gender");
             $table->integer("dog_age");
-            $table->foreignId("prefecture_id")->constrained();
+            $table->foreignId("prefecture_id")->constrained("prefectures");
+            $table->string("dog_condition");
+            $table->string("terms");
+            $table->string("fee");
             $table->string("message");
             $table->timestamps();
         });
@@ -34,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('recruitments');
     }
 };
