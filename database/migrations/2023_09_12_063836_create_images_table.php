@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('room_user', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("user_id")->constrained();
-            $table->foreignId("room_id")->constrained();
+            $table->integer("path");
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('room_user');
+        Schema::dropIfExists('images');
     }
 };

@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('chats', function (Blueprint $table) {
+        Schema::create('open_chats', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("sender_id")->constrained();
-            $table->foreignId("receiver_id")->constrained();
-            $table->foreignId("room_id")->constrained();
-            $table->timestamps("created_at");
-            $table->timestamps("updated_at");
+            $table->foreignId("user_id")->constrained("users");
+            $table->foreignId("recruitment_id")->constrained("recruitments");
+            $table->foreignId("post_id")->constrained("posts");
             $table->string("message");
             $table->timestamps();
         });
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chats');
+        Schema::dropIfExists('open_chats');
     }
 };
