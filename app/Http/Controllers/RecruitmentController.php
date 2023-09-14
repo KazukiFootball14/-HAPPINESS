@@ -11,4 +11,21 @@ class RecruitmentController extends Controller
     {
         return view('recruitments/index')->with(['recruitments' => $recruitment->getPaginateByLimit()]); 
     }
+    
+    public function show(Recruitment $recruitment)
+    {
+        return view('recruitments.show')->with(['recruitment' => $recruitment]);
+    }
+
+    public function create()
+    {
+        return view('recruitments.create');
+    }
+
+    public function store(Recruitment $recruitment, RecruitmentRequest $request)
+    {
+        $input = $request['recruitment'];
+        $recruitment->fill($input)->save();
+        return redirect('/recruitments/' . $recruitment->id);
+    }
 }
