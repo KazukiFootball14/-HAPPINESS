@@ -10,15 +10,20 @@
         
     </head>
     <body>
-        <h1 class="title">
-            {{ $post->title }}
-        </h1>
-        <div class='content'>
-            <div class="content__post">
-                <h3>本文</h3>
-                <p>{{ $post->body }}</p>    
+        <h1>Blog Name</h1>
+        <form action="/recruitments" method="RECRUITMENT">
+            @csrf
+            <div class="title">
+                <h2>Title</h2>
+                <input type="text" name="recruitment[title]" placeholder="タイトル"/>
             </div>
-        </div>
+            <div class="body">
+                <h2>Body</h2>
+                <textarea name="recruitment[body]" placeholder="今日も1日お疲れさまでした。"></textarea>
+            </div>
+            <input type="submit" value="store"/>
+        </form>
+
         <div class="footer">
             <a href="/">戻る</a>
         </div>

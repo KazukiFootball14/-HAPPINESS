@@ -10,6 +10,7 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+        <a href='/recruitments/create'>create</a>
         <div class='recruitments'>
             @foreach ($recruitments as $recruitment)
                 <div class='recruitment'>
