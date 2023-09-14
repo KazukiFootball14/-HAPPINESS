@@ -18,11 +18,10 @@ class RecruitmentSeeder extends Seeder
     {
         DB::table('recruitments')->insert([
             'user_id' => 1,
-            'image_id' => 1,
             'dog_name' => 'イヌの名前',
             'kind_id' => 1,
             'dog_gender' => 'イヌの性別',
-            'dog_age' => 'イヌの年齢',
+            'dog_age' => 10,
             'prefecture_id' => 1,
             'dog_condition' => 'イヌの体調',
             'terms' => '譲渡条件',

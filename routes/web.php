@@ -17,4 +17,4 @@ use App\Http\Controllers\RecruitmentController;
 Route::get('/', [RecruitmentController::class, 'index']);
 Route::get('/recruitments/create', [RecruitmentController::class, 'create']);
 Route::get('/recruitments/{recruitment}', [RecruitmentController::class ,'show']);
-Route::recruitment('/recruitments', [RecruitmentController::class, 'store']);
+Route::post('/recruitments', [RecruitmentController::class, 'store']);
