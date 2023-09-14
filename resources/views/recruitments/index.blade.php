@@ -18,5 +18,8 @@
                 </div>
             @endforeach
         </div>
+        <div class='paginate'>
+            {{ $recruitments->links() }}
+        </div>
     </body>
 </html>
