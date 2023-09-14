@@ -29,3 +29,4 @@ class RecruitmentController extends Controller
         return redirect('/recruitments/' . $recruitment->id);
     }
 }
+
