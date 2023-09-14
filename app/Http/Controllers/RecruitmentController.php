@@ -26,6 +26,6 @@ class RecruitmentController extends Controller
     {
         $input = $request['recruitment'];
         $recruitment->fill($input)->save();
-        return redirect('/recruitments/' . $recruitment->id);
+        return redirect('/recruitments/' .  $recruitment->id);
     }
 }
