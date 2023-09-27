@@ -15,8 +15,15 @@ class RecruitmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'recruitment.title' => 'required|string|max:100',
-            'recruitment.body' => 'required|string|max:4000',
+            'recruitment.dog_name' => 'required|string|max:4000',
+            'recruitment.kind_id' => 'required|integer|max:4000',
+            'recruitment.dog_gender' => 'required|string|max:4000',
+            'recruitment.dog_age' => 'required|integer|max:4000',
+            'recruitment.prefecture_id' => 'required|integer|max:4000',
+            'recruitment.dog_condition' => 'required|string|max:4000',
+            'recruitment.terms' => 'required|string|max:4000',
+            'recruitment.fee' => 'required|string|max:4000',
+            'recruitment.message' => 'required|string|max:4000',
         ];
     }
 }

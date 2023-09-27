@@ -7,15 +7,35 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recruitment extends Model
 {
+   
     use HasFactory;
     
+    public function kind()
+{
+    return $this->belongsTo(Kind::class);
+}
+
+    public function prefecture()
+{
+    return $this->belongsTo(Prefecture::class);
+}
+
     protected $fillable = [
-        'title',
-        'body',
+        
+        'user_id',
+        'dog_name',
+        'kind_id',
+        'dog_gender',
+        'dog_age',
+        'prefecture_id',
+        'dog_condition',
+        'terms',
+        'fee',
+        'message',
         ];
-    
-    public function getByLimit(int $limit_count = 10)
+        
+        function getPaginateByLimit(int $limit_count = 5)
     {
-        return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+        return $this::with('kind' , 'prefecture')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 }
